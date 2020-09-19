@@ -1,17 +1,9 @@
-FROM ruby:2.6.3
-
-ENV APP_ROOT /usr/src/project_name 
-
-WORKDIR ${APP_ROOT}
-
-RUN apt-get update && \
-    apt-get install -y nodejs
-
-COPY Gemfile ${APP_ROOT}
-COPY Gemfile.lock ${APP_ROOT}
-
+FROM ruby:2.5
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN mkdir /myapp
+WORKDIR /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
-
-EXPOSE 3000
-
-CMD bundle exec rails server
+COPY . /myapp
+# railsを追加した場合 RUN sudo gem install rails
