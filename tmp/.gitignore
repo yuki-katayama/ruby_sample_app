@@ -1,5 +1,3 @@
 /db/
-/db/*
 
-/pids/*
-/pids/
+/pids/server.pid
