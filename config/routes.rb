@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get  'posts/:id/edit' => 'posts#edit'
   post 'posts/:id/update' => 'posts#update'
   post 'posts/:id/delete' => 'posts#delete'
+  get 'users/index' => 'users#index'
   get 'about' => "home#about"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
