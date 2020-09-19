@@ -3444,3 +3444,33 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 588ms (Views: 539.6ms | ActiveRecord: 16.1ms)
 
 
+Started GET "/posts/index" for 172.28.0.1 at 2020-09-19 06:50:15 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (4.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 950ms (Views: 893.3ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/posts/index" for 172.28.0.1 at 2020-09-19 06:50:16 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 147ms (Views: 127.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 172.28.0.1 at 2020-09-19 06:50:19 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
