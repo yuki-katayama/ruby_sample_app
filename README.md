@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+開始方法
+docker-compose build
+docker-compose up
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate
+8000 portで接続できる。
