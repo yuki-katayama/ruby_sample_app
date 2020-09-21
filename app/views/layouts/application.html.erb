@@ -11,16 +11,17 @@
 
   <body>
   <header>
-  <div class="header-logo"> 
-  <%= link_to("トップページ","/") %>
-  </div>
+   <div class="header-logo">
+  <% if @current_user %>
+          <%= link_to("トップページ", "/posts/index") %>
+        <% else %>
+          <%= link_to("トップページ", "/") %>
+        <% end %>
+    </div>
   <ul class="header-menus">
-
-    <% current_user = User.find_by(id: session[:user_id]) %>
-
-    <% if current_user %>
+    <% if @current_user %>
       <li>
-      <%= link_to(current_user.name, "/users/#{current_user.id}") %>
+      <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
       </li>
       <li> 
       <%= link_to("千鳥ファンappsとは", "/about") %>
