@@ -29,3 +29,6 @@ docker-compose up
 docker-compose run web rake db:create
 docker-compose run web rake db:migrate
 8000 portで接続できる。
+
+
+一括削除機能をつける

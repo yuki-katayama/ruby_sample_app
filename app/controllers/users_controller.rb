@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         # @user.name = params[:name]
         # @user.email = params[:email]
         # @user.save
-        @user = User.new(name: params[:name], email: params[:email])
+        @user = User.new(name: params[:name], email: params[:email], image_name: "daigo.jpg")
         if @user.save
             flash[:notice] = "aa"
             redirect_to("/users/#{@user.id}")
@@ -31,6 +31,11 @@ class UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
         @user.name = params[:name]
         @user.email = params[:email]
+        if params[:image]
+            @user.image_name = "pic:#{@user.id}.jpg"
+            image = params[:image]
+            File.binwrite("public/user_images/#{@user.image_name}", image.read)
+        end
         if @user.save
             flash[:notice] = "ユーザー情報を編集しました"
             redirect_to("/users/#{@user.id}")
